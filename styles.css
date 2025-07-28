@@ -1,9 +1,14 @@
+@font-face {
+  font-family: 'Fortrack' ;
+  src: url(./font/FortrackItalic-5zBj.otf);
+}
+
 .column .row {
     border: 0.5px solid rgba(204, 204, 204, 0.37);
     background-color: white;
 }
 
-#board {
+#grid {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -12,13 +17,72 @@
   background-color: #bfbfbf;
 }
 
-#board>div {
+#grid>div {
   height: auto;
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-#board>div>* {
+#grid>div>* {
   flex: 1;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: rgb(175, 40, 40);
+  width: 1000px;
+  height: 800px;
+  border-radius: 50px;
+  flex-direction: column;
+}
+
+#workspace {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+}
+
+h1 {
+  font-family: 'Fortrack', sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  color: gold;
+  text-shadow:
+                -2px -2px 0 #000,
+                2px -2px 0 #000,
+                -2px 2px 0 #000,
+                2px 2px 0 #000,
+                -3px 0px 0 #000,
+                3px 0px 0 #000,
+                0px -3px 0 #000,
+                0px 3px 0 #000;
+
+  margin: 0;
+}
+
+
+#rgb-color, #solid-color {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes tilt-shaking {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+div.box {
+  animation: tilt-shaking 0.25s infinite;
 }
